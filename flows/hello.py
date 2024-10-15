@@ -16,5 +16,6 @@ if __name__ == "__main__":
         entrypoint="flows/hello.py:hello"
     ).deploy(
         name="deploy-prova-git",
-        work_pool_name="test1"
+        work_pool_name="test1",
+        job_variables={"pip_packages": ["prefect", "prefect-docker", "prefect-kubernetes"]}
     )

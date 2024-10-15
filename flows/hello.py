@@ -7,7 +7,7 @@ def hello(name: str = "Marvin"):
     logger.info(f"Hello, {name}!")
 
 if __name__ == "__main__":
-    hello.source(
+    hello.from_source(
         source="https://github.com/amakaido28/prefect.git",
         entrypoint="prefect/flows/hello.py:hello"
     ).deploy(

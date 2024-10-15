@@ -14,7 +14,7 @@ if __name__ == "__main__":
         work_pool_name="test1",
         job_variables={"pip_packages": ["prefect", "prefect-docker", "prefect-kubernetes"], 
                         "env": {
-                            "PREFECT_API_URL": "http://172.18.21.116:4200",
+                            "PREFECT_API_URL": "http://172.18.21.116:4200/api",
                             "PREFECT_SERVER_ALLOW_EPHEMERAL_MODE": "False",
                             "PREFECT_SERVER_API_HOST": "172.18.21.116"
                         }

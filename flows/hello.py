@@ -8,9 +8,9 @@ def hello(name: str = "Marvin"):
 
 if __name__ == "__main__":
     hello.source(
-        source="https://github.com/username/repository.git",
-        entrypoint="path/to/your/flow.py:your_flow_function"
+        source="https://github.com/amakaido28/prefect.git",
+        entrypoint="prefect/flows/hello.py:hello"
     ).deploy(
-        name="deploy-prova-s3",
+        name="deploy-prova-git",
         work_pool_name="test1"
     )

@@ -2,6 +2,7 @@ from prefect import flow, tags
 from prefect.logging import get_run_logger
 import os 
 os.environ['PREFECT_API_URL'] = 'http://172.18.21.116:4200/api'
+os.environ['PREFECT_SERVER_API_HOST'] = '172.18.21.116'
 
 @flow
 def hello(name: str = "Marvin"):

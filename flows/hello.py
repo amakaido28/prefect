@@ -1,5 +1,6 @@
 from prefect import flow, tags
 from prefect.logging import get_run_logger
+from prefect.infrastructure import KubernetesJob
 
 @flow
 def hello(name: str = "Marvin"):
@@ -19,4 +20,14 @@ if __name__ == "__main__":
                             "PREFECT_SERVER_API_HOST": "172.18.21.116"
                         }
                     }
+        run_config=KubernetesRun(
+            job=KubernetesJob(
+                image="my-image",
+                cpu_request="1",
+                cpu_limit="2",
+                memory_request="1Gi",
+                memory_limit="2Gi",
+                gpu_request={"nvidia.com/gpu": 1}
+            )
+        )
     )

@@ -15,6 +15,7 @@ def hello(name: str = "Marvin"):
 
 
 if __name__ == "__main__":
+    #hello()
     hello.from_source(
         source="https://github.com/amakaido28/prefect.git",
         entrypoint="flows/hello.py:hello"
@@ -27,5 +28,7 @@ if __name__ == "__main__":
                             "PREFECT_SERVER_ALLOW_EPHEMERAL_MODE": "False",
                             "PREFECT_SERVER_API_HOST": "172.18.21.116"
                         }
-                    }
+                    },
+        image="registry.e4-analytics.lan/akaido/prefect-test:dev",
+        push=True
     )

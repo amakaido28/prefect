@@ -29,4 +29,5 @@ if __name__ == "__main__":
                         }
                     },
         image="my-first-deployment-image:tutorial",
+        push=False
     )

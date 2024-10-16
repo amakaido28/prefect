@@ -28,4 +28,5 @@ if __name__ == "__main__":
                             "PREFECT_SERVER_API_HOST": "172.18.21.116"
                         }
                     },
+        image="my-first-deployment-image:tutorial",
     )

@@ -26,7 +26,7 @@ if __name__ == "__main__":
                             "PREFECT_SERVER_ALLOW_EPHEMERAL_MODE": "False",
                             "PREFECT_SERVER_API_HOST": "172.18.21.116"
                         }
-                    }
+                    },
         run_config=KubernetesRun(
             job=KubernetesJob(
                 image="my-image",

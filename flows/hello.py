@@ -2,6 +2,7 @@ from prefect import flow, tags
 from prefect.logging import get_run_logger
 import torch
 
+
 @flow
 def hello(name: str = "Marvin"):
     print("!*!*!*!*!* Hello *!*!**!*!*!*!")
@@ -12,6 +13,7 @@ def hello(name: str = "Marvin"):
     print(f"{start_gpu_memory} GB of memory reserved.")
     print("!*!*!*!*!* End *!*!**!*!*!*!")
 
+
 if __name__ == "__main__":
     hello.from_source(
         source="https://github.com/amakaido28/prefect.git",
@@ -19,7 +21,7 @@ if __name__ == "__main__":
     ).deploy(
         name="deploy-prova-git",
         work_pool_name="test1",
-        job_variables={"pip_packages": ["prefect", "prefect-docker", "prefect-kubernetes"], 
+        job_variables={"pip_packages": ["prefect", "prefect-docker", "prefect-kubernetes", "torch"], 
                         "env": {
                             "PREFECT_API_URL": "http://172.18.21.116:4200/api",
                             "PREFECT_SERVER_ALLOW_EPHEMERAL_MODE": "False",

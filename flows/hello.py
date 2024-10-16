@@ -1,6 +1,5 @@
 from prefect import flow, tags
 from prefect.logging import get_run_logger
-from prefect.infrastructure import KubernetesJob
 import torch
 
 @flow
